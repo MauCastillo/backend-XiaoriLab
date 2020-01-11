@@ -1,9 +1,19 @@
 <?php
-if (isset($_REQUEST["function"]) and isset($_REQUEST["parametros"])  ) {
-    $function = $_REQUEST["function"];
-    $parametros = $_REQUEST["parametros"];
+$dataPost = file_get_contents('php://input');
+$variablePost = json_decode($dataPost, true);
+
+if (isset($variablePost["function"]) and isset($variablePost["parametros"])) {
+    $function = $variablePost["function"];
+    $parametros = $variablePost["parametros"];
 } else{
-    echo json_encode(['message' => 'fucntion no found', 'status' => false]);
+    echo json_encode([
+        'message' => 'function no found',
+        'status' => false,
+        'data' => $dataPost,
+        'function' => $function,
+        'params' => $parametros
+    ]);
+
     return;
 }
 
@@ -79,7 +89,7 @@ function get_post($parametros)
         return;
     }
 
-    $query = "SELECT id, title, read_time, author_id, body, summary, banner, meta_tag, meta_description, date FROM articles WHERE id = ?;";
+    $query = "SELECT id, title, read_time, author_id, body, summary, banner, meta_tag, meta_description, date, something FROM articles WHERE id = ?;";
     
     $stmt = $mysqli->prepare($query);
     $stmt->bind_param("i", $id);
@@ -97,7 +107,8 @@ function get_post($parametros)
         $return[$key]['banner'] = $res['banner'];
         $return[$key]['meta_tag'] = $res['meta_tag'];
         $return[$key]['meta_description'] = $res['meta_description'];
-        $return[$key]['date'] = $res['date'];
+	$return[$key]['something'] = $res['something'];
+        
 
     }
 

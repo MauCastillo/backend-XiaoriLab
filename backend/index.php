@@ -1,14 +1,10 @@
 <html lang="en">
 
 <head>
-    <!--
-      Mauricio Castillo
-      add Jquery and Bootstrap libraries by using external servers
-      --->
-    <link rel="stylesheet" href="/mao/worldpay/css/style.css?<?php echo date('l jS \of F Y h:i:s A'); ?>">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>World Pay </title>
+    <title>Test DataBase</title>
     <!-- jQuery library -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">

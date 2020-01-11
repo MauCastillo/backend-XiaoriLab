@@ -1,5 +1,5 @@
 jQuery.noConflict();
-const pathPhp = "/xiori/php/functions.php";
+const pathPhp = "/php/functions.php";
 
 function list_documents_query(funcion, parametros) {
     jQuery("#cuerpo").html("");
