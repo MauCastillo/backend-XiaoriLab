@@ -1,9 +1,9 @@
 <?php
 	/* Database connection start */
 	$servername = "localhost";
-	$username = "root";
-	$password = "";
-	$dbname = "xiaratest";
+	$username = "id12075287_xiara";
+	$password = "&3vVv_Yh92";
+	$dbname = "id12075287_xiaratest";
 
 	mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 	try {
